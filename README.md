@@ -3,7 +3,7 @@ Some reporting solutions for training purposes.
 
 # Installation
 
-### Pre-sets 
+### Pre-steps
 + install [Maven](https://maven.apache.org/download.cgi) and add it in environment variables.
 + install [MySql](https://dev.mysql.com/downloads/mysql/) database (if you have not done this before). 
 Credentials for database you can find in **../reporting/app-statistics/src/main/resources/database.properties**
