@@ -6,15 +6,15 @@ Some reporting solutions for training purposes.
 ### Pre-steps
 + install [Maven](https://maven.apache.org/download.cgi) and add it in environment variables.
 + install [MySql](https://dev.mysql.com/downloads/mysql/) database (if you have not done this before). 
-Credentials for database you can find in **../reporting/app-statistics/src/main/resources/database.properties**
+Credentials for database you can find in **../reporting/app-statistics/src/main/resources/database.properties**.
 + upload **../reporting/dump.sql** to MySql database.
-+ (optional. for lombok project) install [IntelliJ Lombok plugin](#Lombok)
++ (optional) For the correct integration IntelliJ with Lombok project you should be install the [Lombok plug-in](#Lombok).
 
 ### Start application
 To start App-statistics application you should be execute following steps:
 + **cd ../reporting/app-statistics**
 + **mvn clean tomcat7:run-war**
-Tomcat server with application will be start on [http://localhost:8090](http://localhost:8090)
+Tomcat server with application will be start on [http://localhost:8090](http://localhost:8090).
 
 ### Stop application
 To stop App-statistics application you should be execute following steps:
