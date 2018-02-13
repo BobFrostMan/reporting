@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <link href="resources/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="resources/vendor/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="resources/app/css/ng-cloak.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header-directive></header-directive>
+        <h1>Hello, world!</h1>
+        <footer-directive></footer-directive>
+    </div>
+
+    <script src="resources/vendor/angular/angular.min.js"></script>
+    <script src="resources/vendor/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="resources/app/app.js"></script>
+    <!--COMMON-->
+    <script src="resources/app/common/common.module.js"></script>
+    <!--COMMON.SERVICE-->
+    <script src="resources/app/common/services/common-services.module.js"></script>
+    <!--COMMON.FILTER-->
+    <script src="resources/app/common/filters/common-filters.module.js"></script>
+    <!--COMMON.DIRECTIVE-->
+    <script src="resources/app/common/directive/common-directive.module.js"></script>
+    <script src="resources/app/common/directive/site.directive.js"></script>
+    <!--COMMON.CONSTANT-->
+    <script src="resources/app/common/constant/common-constant.module.js"></script>
+    <!--COMMON.DECORATOR-->
+    <script src="resources/app/common/decorator/common-decorator.module.js"></script>
+    <script src="resources/app/common/decorator/log.decorator.js"></script>
+    <!--FEATURE-->
+    <script src="resources/app/feature/common.feature.js"></script>
+    <!--FEATURE.CONTROLLER-->
+</body>
+
+</html>
