@@ -16,7 +16,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 @Configuration
 @EnableMongoRepositories(basePackages = "com.app.statistics.repository")
-@PropertySource(value = { "classpath:database.properties" })
+@PropertySource(value = {"classpath:database.properties"})
 public class SpringMongoConfig extends AbstractMongoConfiguration {
     private static final String BASE_MAPPING_PACKAGE = "com.app.statistics";
     private static final String DB_NAME_PROPERTY = "jdbc.dbName";
@@ -36,16 +36,13 @@ public class SpringMongoConfig extends AbstractMongoConfiguration {
         return new MongoClient(env.getProperty(DB_HOST), env.getProperty(DB_PORT, Integer.class));
     }
 
-
     @Override
     protected String getMappingBasePackage() {
         return BASE_MAPPING_PACKAGE;
     }
 
-
-
     @Override
-    public MongoTemplate mongoTemplate(){
+    public MongoTemplate mongoTemplate() {
         return new MongoTemplate(mongo(), getDatabaseName());
     }
 }
