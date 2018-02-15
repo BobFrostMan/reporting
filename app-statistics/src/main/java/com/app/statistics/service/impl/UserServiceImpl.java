@@ -18,7 +18,7 @@ public class UserServiceImpl implements UserService{
     @Autowired
     private BeanMapper mapper;
 
-    public UserModel getUser(final Long id) {
+    public UserModel getUser(final String id) {
         final UserEntity user = userRepository.findOne(id);
         Precondition.checkArgument(user != null, new UserNotFoundException());
         return mapper.map(user, UserModel.class);

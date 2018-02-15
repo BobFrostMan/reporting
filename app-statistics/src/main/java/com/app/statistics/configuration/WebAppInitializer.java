@@ -5,7 +5,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return new Class[] {SpringCoreConfiguration.class, SpringDatabaseConfiguration.class};
+		return new Class[] {SpringCoreConfiguration.class, SpringMongoConfig.class};
 	}
 
 	@Override
