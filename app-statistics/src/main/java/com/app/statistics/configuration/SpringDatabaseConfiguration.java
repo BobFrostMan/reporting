@@ -15,6 +15,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
+import java.util.Properties;
 
 @Configuration
 @EnableJpaRepositories(basePackages = {"com.app.statistics.repository"})
@@ -25,6 +26,10 @@ public class SpringDatabaseConfiguration {
     private static final String JDBC_URL_PROPERTY = "jdbc.url";
     private static final String JDBC_USERNAME_PROPERTY = "jdbc.username";
     private static final String JDBC_PASSWORD_PROPERTY = "jdbc.password";
+
+    private static final String HIBERNATE_HBM2DDL_AUTO = "hibernate.hbm2ddl.auto";
+    private static final String HIBERNATE_SHOW_SQL = "hibernate.show_sql";
+    private static final String HIBERNATE_FORMAT_SQL = "hibernate.format_sql";
 
     private static final String PATH_TO_ENTITY_FOLDER = "com.app.statistics.entity";
 
@@ -52,6 +57,12 @@ public class SpringDatabaseConfiguration {
         factoryBean.setDataSource(dataSource());
         factoryBean.setJpaVendorAdapter(adapter);
         factoryBean.setPackagesToScan(PATH_TO_ENTITY_FOLDER);
+
+        final Properties properties = new Properties();
+        properties.setProperty(HIBERNATE_HBM2DDL_AUTO, env.getProperty(HIBERNATE_HBM2DDL_AUTO));
+        properties.setProperty(HIBERNATE_SHOW_SQL, env.getProperty(HIBERNATE_SHOW_SQL));
+        properties.setProperty(HIBERNATE_FORMAT_SQL, env.getProperty(HIBERNATE_FORMAT_SQL));
+        factoryBean.setJpaProperties(properties);
         return factoryBean;
     }
 

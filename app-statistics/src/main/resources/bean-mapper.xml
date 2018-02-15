@@ -2,16 +2,23 @@
 <mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd">
 
-    <mapping map-id="user">
-        <class-a>com.app.statistics.entity.UserEntity</class-a>
-        <class-b>com.app.statistics.model.UserModel</class-b>
+    <configuration>
+        <custom-converters>
+            <converter type="com.app.statistics.mapper.converter.impl.TestCustomResultConverter">
+                <class-a>com.app.statistics.model.ResultModel</class-a>
+                <class-b>com.app.statistics.entity.TestResultEntity</class-b>
+            </converter>
+        </custom-converters>
+    </configuration>
+
+    <mapping map-id="meta">
+        <class-a>com.app.statistics.entity.ResultMetaEntity</class-a>
+        <class-b>com.app.statistics.model.ResultMetaModel</class-b>
         <field>
-            <a>id</a>
-            <b>id</b>
-        </field>
-        <field>
-            <a>name</a>
-            <b>name</b>
+            <a>type</a>
+            <b>type</b>
         </field>
     </mapping>
+
+
 </mappings>

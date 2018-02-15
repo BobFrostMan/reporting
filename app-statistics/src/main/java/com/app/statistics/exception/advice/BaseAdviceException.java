@@ -1,4 +1,4 @@
-package com.app.statistics.exception;
+package com.app.statistics.exception.advice;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,10 +7,10 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class BaseException extends RuntimeException {
+public class BaseAdviceException extends RuntimeException {
     private Functionality functionality;
 
-    public BaseException(Functionality functionality) {
+    public BaseAdviceException(Functionality functionality) {
         this.functionality = functionality;
     }
 

@@ -1,7 +1,7 @@
 package com.app.statistics.api.advice;
 
-import com.app.statistics.exception.BaseException;
-import com.app.statistics.exception.Functionality;
+import com.app.statistics.exception.advice.BaseAdviceException;
+import com.app.statistics.exception.advice.Functionality;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -20,8 +20,8 @@ public class AdviceController {
     private static final String HTTP_STATUS_PROPERTY = "http_status";
 
     @ResponseBody
-    @ExceptionHandler(BaseException.class)
-    public ResponseEntity<Map<String, Object>> errorHandler(final BaseException ex) {
+    @ExceptionHandler(BaseAdviceException.class)
+    public ResponseEntity<Map<String, Object>> errorHandler(final BaseAdviceException ex) {
         final Functionality functionality = ex.getFunctionality();
 
         final Map<String,Object> errorInfo = new HashMap<>();

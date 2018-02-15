@@ -1,5 +1,6 @@
 package com.app.statistics.model;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -7,7 +8,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class UserModel {
-    private Long id;
-    private String name;
+@EqualsAndHashCode
+public class ResultMetaModel {
+    private String type;
 }
