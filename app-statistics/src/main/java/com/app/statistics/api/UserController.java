@@ -15,7 +15,7 @@ public class UserController {
     private UserService userServiceImpl;
 
     @RequestMapping(method = RequestMethod.GET, value = "/{id}", produces = "application/json")
-    public UserModel findUserById(@PathVariable Long id){
+    public UserModel findUserById(@PathVariable String id){
         return userServiceImpl.getUser(id);
     }
 }

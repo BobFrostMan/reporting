@@ -8,6 +8,6 @@ import lombok.ToString;
 @Setter
 @ToString
 public class UserModel {
-    private Long id;
+    private String id;
     private String name;
 }
