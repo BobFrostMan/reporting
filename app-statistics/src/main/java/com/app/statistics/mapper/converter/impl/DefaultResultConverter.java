@@ -4,7 +4,6 @@ import com.app.statistics.entity.DefaultResultEntity;
 import com.app.statistics.entity.TestStatus;
 import com.app.statistics.mapper.converter.CustomResultConverter;
 import com.app.statistics.model.Group;
-import com.app.statistics.model.ResultMetaModel;
 import com.app.statistics.model.ResultModel;
 import com.app.statistics.util.ValueMap;
 
@@ -22,8 +21,8 @@ public class DefaultResultConverter extends CustomResultConverter<DefaultResultE
     private static final String METHOD_NAME_PROPERTY = "methodName";
     private static final String START_TIME_PROPERTY = "startTime";
     private static final String END_TIME_PROPERTY = "endTime";
-    public static final String PARAMETERS_PROPERTY = "parameters";
-    public static final String ADDITIONAL_INFO_PROPERTY = "additionalInfo";
+    private static final String PARAMETERS_PROPERTY = "parameters";
+    private static final String ADDITIONAL_INFO_PROPERTY = "additionalInfo";
 
     @Override
     protected ResultModel resultEntityToResultModel(final DefaultResultEntity resultEntity) {
