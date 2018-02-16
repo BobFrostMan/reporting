@@ -5,9 +5,8 @@ Some reporting solutions for training purposes.
 
 ### Pre-steps
 + install [Maven](https://maven.apache.org/download.cgi) and add it in environment variables.
-+ install [MySql](https://dev.mysql.com/downloads/mysql/) database (if you have not done this before). 
-Credentials for database you can find in **../reporting/app-statistics/src/main/resources/database.properties**.
-+ upload **../reporting/dump.sql** to MySql database.
++ install [MongoDb](https://www.mongodb.com/download-center#community/) if you have not done this before. 
+Configuration for database you can find in **../reporting/app-statistics/src/main/resources/database.properties**.
 + (optional) For the correct integration IntelliJ with Lombok project you should be install the [Lombok plug-in](#Lombok).
 
 ### Start application
