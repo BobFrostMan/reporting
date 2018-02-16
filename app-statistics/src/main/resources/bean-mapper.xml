@@ -2,16 +2,12 @@
 <mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd">
 
-    <mapping map-id="user">
-        <class-a>com.app.statistics.entity.UserEntity</class-a>
-        <class-b>com.app.statistics.model.UserModel</class-b>
-        <field>
-            <a>id</a>
-            <b>id</b>
-        </field>
-        <field>
-            <a>name</a>
-            <b>name</b>
-        </field>
-    </mapping>
+    <configuration>
+        <custom-converters>
+            <converter type="com.app.statistics.mapper.converter.impl.DefaultResultConverter">
+                <class-a>com.app.statistics.model.ResultModel</class-a>
+                <class-b>com.app.statistics.entity.DefaultResultEntity</class-b>
+            </converter>
+        </custom-converters>
+    </configuration>
 </mappings>
