@@ -1,16 +1,16 @@
 package com.app.statistics.annotation.handler;
 
-import com.app.statistics.annotation.ResultMapping;
+import com.app.statistics.annotation.ResultTypeMapping;
 import com.app.statistics.entity.ResultEntity;
 import com.app.statistics.exception.ResultMappingContainerInitializationException;
+import com.app.statistics.model.Group;
+import com.app.statistics.model.MetaType;
 import org.reflections.Reflections;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.util.*;
-
-import static com.app.statistics.precondition.Precondition.checkArgument;
 
 @Component
 @Scope("singleton")
@@ -19,7 +19,7 @@ public class ResultMappingAnnotationHandler {
 
     private final List<ResultMappingItem> requestMappingContainer = new ArrayList<>();
 
-    public Class<? extends ResultEntity> findEntityClassForRequest(final String group, final String type) {
+    public Class<? extends ResultEntity> findEntityClassForRequest(final Group group, final MetaType type) {
         final ResultMappingItem mappingItem = findResultTypeMappingItem(group);
         if (mappingItem == null) {
             return null;
@@ -30,25 +30,25 @@ public class ResultMappingAnnotationHandler {
 
     @PostConstruct
     private void initContainer() {
-        for (Map.Entry<Class<? extends ResultEntity>, ResultMapping> typeMapping : findResultMappingAnnotation().entrySet()) {
+        for (Map.Entry<Class<? extends ResultEntity>, ResultTypeMapping> typeMapping : findResultMappingAnnotation().entrySet()) {
             addToContainer(typeMapping.getKey(), typeMapping.getValue());
         }
     }
 
-    private Map<Class<? extends ResultEntity>, ResultMapping> findResultMappingAnnotation() {
-        final Map<Class<? extends ResultEntity>, ResultMapping> typeMapping = new HashMap<>();
+    private Map<Class<? extends ResultEntity>, ResultTypeMapping> findResultMappingAnnotation() {
+        final Map<Class<? extends ResultEntity>, ResultTypeMapping> typeMapping = new HashMap<>();
         final Reflections reflections = new Reflections(PACKAGE_WITH_CLASSES);
-        final Set<Class<?>> allClasses = reflections.getTypesAnnotatedWith(ResultMapping.class);
+        final Set<Class<?>> allClasses = reflections.getTypesAnnotatedWith(ResultTypeMapping.class);
 
         for (Class clazz : allClasses) {
-            typeMapping.put(clazz, (ResultMapping) clazz.getAnnotation(ResultMapping.class));
+            typeMapping.put(clazz, (ResultTypeMapping) clazz.getAnnotation(ResultTypeMapping.class));
         }
         return typeMapping;
     }
 
-    private void addToContainer(final Class<? extends ResultEntity> clazz, final ResultMapping annotation) {
-        final String type = annotation.typeName();
-        final String group = annotation.groupName();
+    private void addToContainer(final Class<? extends ResultEntity> clazz, final ResultTypeMapping annotation) {
+        final MetaType type = annotation.type();
+        final Group group = annotation.group();
         ResultMappingItem mappingItem = findResultTypeMappingItem(group);
 
 
@@ -57,7 +57,7 @@ public class ResultMappingAnnotationHandler {
             return;
         }
 
-        mappingItem = new ResultMappingItem(annotation.groupName());
+        mappingItem = new ResultMappingItem(annotation.group());
 
         if (mappingItem.exist(type)) {
             throw new ResultMappingContainerInitializationException(
@@ -68,7 +68,7 @@ public class ResultMappingAnnotationHandler {
         requestMappingContainer.add(mappingItem);
     }
 
-    private ResultMappingItem findResultTypeMappingItem(final String groupName) {
+    private ResultMappingItem findResultTypeMappingItem(final Group groupName) {
         for (ResultMappingItem item : requestMappingContainer) {
             if (item.getGroupName().equals(groupName)) {
                 return item;

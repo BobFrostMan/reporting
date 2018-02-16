@@ -7,8 +7,8 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString
 @EqualsAndHashCode
+@ToString
 public class ResultMetaModel {
-    private String type;
+    private MetaType type;
 }

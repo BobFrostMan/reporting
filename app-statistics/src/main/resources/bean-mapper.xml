@@ -4,21 +4,10 @@
 
     <configuration>
         <custom-converters>
-            <converter type="com.app.statistics.mapper.converter.impl.TestCustomResultConverter">
+            <converter type="com.app.statistics.mapper.converter.impl.DefaultResultConverter">
                 <class-a>com.app.statistics.model.ResultModel</class-a>
-                <class-b>com.app.statistics.entity.TestResultEntity</class-b>
+                <class-b>com.app.statistics.entity.DefaultResultEntity</class-b>
             </converter>
         </custom-converters>
     </configuration>
-
-    <mapping map-id="meta">
-        <class-a>com.app.statistics.entity.ResultMetaEntity</class-a>
-        <class-b>com.app.statistics.model.ResultMetaModel</class-b>
-        <field>
-            <a>type</a>
-            <b>type</b>
-        </field>
-    </mapping>
-
-
 </mappings>

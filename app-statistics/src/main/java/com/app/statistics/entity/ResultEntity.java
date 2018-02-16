@@ -1,24 +1,20 @@
 package com.app.statistics.entity;
 
+import com.app.statistics.model.Group;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-
-import javax.persistence.*;
+import lombok.ToString;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
 @Setter
-@MappedSuperclass
+@EqualsAndHashCode
+@ToString
+@Document(collection = "TEST_RESULT")
 public abstract class ResultEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "RESULT_ID")
-    protected long id;
-
-    @OneToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name="RESULT_GROUP_ID")
-    protected ResultGroupEntity resultGroup;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="RESULT_META_ID")
-    protected ResultMetaEntity meta;
+    private String testName;
+    private String description;
+    private TestStatus result;
+    private Group group;
 }

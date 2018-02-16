@@ -1,5 +1,6 @@
 package com.app.statistics.api;
 
+import com.app.statistics.model.Group;
 import com.app.statistics.model.ResultModel;
 import com.app.statistics.service.ResultService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class ResultController {
     private ResultService resultService;
 
     @RequestMapping(method = RequestMethod.POST, value = "/{group}", produces = "application/json")
-    public ResponseEntity saveResult(@PathVariable String group, @RequestBody ResultModel body){
+    public ResponseEntity saveResult(@PathVariable Group group, @RequestBody ResultModel body){
         resultService.save(group, body);
         return new ResponseEntity<>(HttpStatus.OK);
     }

@@ -9,8 +9,8 @@ import java.util.Map;
 
 @Getter
 @Setter
-@ToString
 @EqualsAndHashCode
+@ToString
 public class ResultModel {
     private ResultMetaModel meta;
     private Map<String, Object> data;
