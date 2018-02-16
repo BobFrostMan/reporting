@@ -1,6 +1,5 @@
 package com.app.statistics.entity;
 
-import com.app.statistics.model.Group;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,5 +15,4 @@ public abstract class ResultEntity {
     private String testName;
     private String description;
     private TestStatus result;
-    private Group group;
 }

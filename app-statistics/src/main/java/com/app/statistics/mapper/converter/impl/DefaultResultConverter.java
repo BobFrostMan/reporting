@@ -3,7 +3,6 @@ package com.app.statistics.mapper.converter.impl;
 import com.app.statistics.entity.DefaultResultEntity;
 import com.app.statistics.entity.TestStatus;
 import com.app.statistics.mapper.converter.CustomResultConverter;
-import com.app.statistics.model.Group;
 import com.app.statistics.model.ResultModel;
 import com.app.statistics.util.ValueMap;
 
@@ -15,7 +14,6 @@ import java.util.Map;
 public class DefaultResultConverter extends CustomResultConverter<DefaultResultEntity>{
 
     private static final String TEST_NAME_PROPERTY = "testName";
-    private static final String GROUP_PROPERTY = "group";
     private static final String RESULT_PROPERTY = "result";
     private static final String DESCRIPTION_PROPERTY = "description";
     private static final String METHOD_NAME_PROPERTY = "methodName";
@@ -57,7 +55,6 @@ public class DefaultResultConverter extends CustomResultConverter<DefaultResultE
 
         final DefaultResultEntity resultEntity = new DefaultResultEntity();
         resultEntity.setTestName(properties.get(TEST_NAME_PROPERTY, String.class));
-        resultEntity.setGroup(properties.getEnum(GROUP_PROPERTY, Group.class));
         resultEntity.setResult(properties.getEnum(RESULT_PROPERTY, TestStatus.class, TestStatus.FAILED));
         resultEntity.setDescription(properties.get(DESCRIPTION_PROPERTY, String.class));
         resultEntity.setMethodName(properties.get(METHOD_NAME_PROPERTY, String.class));
