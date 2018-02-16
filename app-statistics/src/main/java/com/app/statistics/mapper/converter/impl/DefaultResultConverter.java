@@ -4,11 +4,14 @@ import com.app.statistics.entity.DefaultResultEntity;
 import com.app.statistics.entity.TestStatus;
 import com.app.statistics.mapper.converter.CustomResultConverter;
 import com.app.statistics.model.Group;
+import com.app.statistics.model.ResultMetaModel;
 import com.app.statistics.model.ResultModel;
 import com.app.statistics.util.ValueMap;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class DefaultResultConverter extends CustomResultConverter<DefaultResultEntity>{
 
@@ -27,8 +30,18 @@ public class DefaultResultConverter extends CustomResultConverter<DefaultResultE
         if (resultEntity == null) {
             return null;
         }
-        final ResultModel resultModel = new ResultModel();
+        final Map<String, Object> data = new HashMap<>();
+        data.put(METHOD_NAME_PROPERTY, resultEntity.getMethodName());
+        data.put(TEST_NAME_PROPERTY, resultEntity.getTestName());
+        data.put(DESCRIPTION_PROPERTY, resultEntity.getDescription());
+        data.put(RESULT_PROPERTY, resultEntity.getResult());
+        data.put(START_TIME_PROPERTY, resultEntity.getStartTime());
+        data.put(END_TIME_PROPERTY, resultEntity.getEndTime());
+        data.put(PARAMETERS_PROPERTY, resultEntity.getParameters());
+        data.put(ADDITIONAL_INFO_PROPERTY, resultEntity.getAdditionalInfo());
 
+        final ResultModel resultModel = new ResultModel();
+        resultModel.setData(data);
         return resultModel;
     }
 
