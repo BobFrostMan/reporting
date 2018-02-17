@@ -1,5 +1,5 @@
 package com.app.statistics.entity;
 
-public enum TestStatus {
+public enum TestResultStatus {
     FAILED, PASSED, SKIPPED,
 }

@@ -1,6 +1,6 @@
 package com.app.statistics.annotation;
 
-import com.app.statistics.model.MetaType;
+import com.app.statistics.model.MetaTypeModel;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -10,5 +10,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 public @interface ResultTypeMapping {
-    MetaType type();
+    MetaTypeModel type();
 }

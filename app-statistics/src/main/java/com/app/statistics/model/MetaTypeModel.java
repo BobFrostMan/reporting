@@ -1,5 +1,5 @@
 package com.app.statistics.model;
 
-public enum MetaType {
+public enum MetaTypeModel {
     DEFAULT
 }

@@ -1,10 +1,10 @@
 package com.app.statistics.mapper.converter;
 
-import com.app.statistics.entity.ResultEntity;
+import com.app.statistics.entity.TestResultEntity;
 import com.app.statistics.model.ResultModel;
 import org.dozer.CustomConverter;
 
-public abstract class CustomResultConverter<T extends ResultEntity> implements CustomConverter {
+public abstract class CustomResultConverter<T extends TestResultEntity> implements CustomConverter {
 
     @Override
     public Object convert(Object destination, Object source, Class destClass, Class sourceClass) {

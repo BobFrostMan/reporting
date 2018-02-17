@@ -10,5 +10,5 @@ import lombok.ToString;
 @EqualsAndHashCode
 @ToString
 public class ResultMetaModel {
-    private MetaType type;
+    private MetaTypeModel type;
 }

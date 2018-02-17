@@ -4,6 +4,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
@@ -11,8 +12,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @EqualsAndHashCode
 @ToString
 @Document(collection = "TEST_RESULT")
-public abstract class ResultEntity {
+public abstract class TestResultEntity {
+    @Id
+    private String id;
     private String testName;
+    private TestResultType testResultType;
     private String description;
-    private TestStatus result;
+    private TestResultStatus result;
 }

@@ -34,7 +34,7 @@ public class ValueMap {
         if (enumValue == null) {
             return null;
         }
-        return Enum.valueOf(valueType, enumValue.trim().toUpperCase());
+        return EnumUtil.adaptToEnum(enumValue.trim().toUpperCase(), valueType);
     }
 
     public <T extends Enum<T>> T getEnum(final String key, final Class<T> valueType, final T defaultValue) {

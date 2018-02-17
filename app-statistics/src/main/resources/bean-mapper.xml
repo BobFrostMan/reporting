@@ -6,7 +6,7 @@
         <custom-converters>
             <converter type="com.app.statistics.mapper.converter.impl.DefaultResultConverter">
                 <class-a>com.app.statistics.model.ResultModel</class-a>
-                <class-b>com.app.statistics.entity.DefaultResultEntity</class-b>
+                <class-b>com.app.statistics.entity.DefaultTestResultEntity</class-b>
             </converter>
         </custom-converters>
     </configuration>
