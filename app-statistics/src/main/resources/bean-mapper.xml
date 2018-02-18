@@ -2,12 +2,59 @@
 <mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd">
 
-    <configuration>
-        <custom-converters>
-            <converter type="com.app.statistics.mapper.converter.impl.DefaultResultConverter">
-                <class-a>com.app.statistics.model.ResultModel</class-a>
-                <class-b>com.app.statistics.entity.DefaultTestResultEntity</class-b>
-            </converter>
-        </custom-converters>
-    </configuration>
+    <mapping map-id="result">
+        <class-a>com.app.statistics.entity.ResultEntity</class-a>
+        <class-b>com.app.statistics.model.ResultModel</class-b>
+        <field>
+            <a>meta</a>
+            <b>meta</b>
+        </field>
+        <field>
+            <a>data</a>
+            <b>data</b>
+        </field>
+    </mapping>
+
+    <mapping map-id="result-meta">
+        <class-a>com.app.statistics.entity.ResultMetaEntity</class-a>
+        <class-b>com.app.statistics.model.ResultMetaModel</class-b>
+        <field>
+            <a>type</a>
+            <b>type</b>
+        </field>
+    </mapping>
+
+    <mapping map-id="result-type">
+        <class-a>com.app.statistics.entity.ResultTypeEntity</class-a>
+        <class-b>com.app.statistics.model.ResultTypeModel</class-b>
+        <field>
+            <a>type</a>
+            <b>type</b>
+        </field>
+        <field>
+            <a>fields</a>
+            <b>fields</b>
+        </field>
+    </mapping>
+
+    <mapping map-id="result-type-field">
+        <class-a>com.app.statistics.entity.ResultTypeFieldEntity</class-a>
+        <class-b>com.app.statistics.model.ResultTypeFieldModel</class-b>
+        <field>
+            <a>fieldName</a>
+            <b>fieldName</b>
+        </field>
+        <field>
+            <a>fieldType</a>
+            <b>fieldType</b>
+        </field>
+        <field>
+            <a>fieldDescription</a>
+            <b>fieldDescription</b>
+        </field>
+        <field>
+            <a>childrenFields</a>
+            <b>childrenFields</b>
+        </field>
+    </mapping>
 </mappings>

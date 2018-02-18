@@ -1,4 +1,4 @@
-package com.app.statistics.model;
+package com.app.statistics.entity;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -9,6 +9,6 @@ import lombok.ToString;
 @Setter
 @EqualsAndHashCode
 @ToString
-public class ResultMetaModel {
+public class ResultMetaEntity {
     private String type;
 }

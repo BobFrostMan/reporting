@@ -7,16 +7,16 @@ import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Map;
+
 @Getter
 @Setter
 @EqualsAndHashCode
 @ToString
-@Document(collection = "TEST_RESULT")
-public abstract class TestResultEntity {
+@Document(collection = "RESULT")
+public class ResultEntity {
     @Id
     private String id;
-    private String testName;
-    private TestResultType testResultType;
-    private String description;
-    private TestResultStatus result;
+    private ResultMetaEntity meta;
+    private Map<String, Object> data;
 }
