@@ -7,6 +7,7 @@ import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Date;
 import java.util.List;
 
 @Getter
@@ -18,5 +19,8 @@ public class ResultTypeEntity {
     @Id
     private String id;
     private String type;
+    private String description;
+    private Date createDate;
+    private Date updateDate;
     private List<ResultTypeFieldEntity> fields;
 }

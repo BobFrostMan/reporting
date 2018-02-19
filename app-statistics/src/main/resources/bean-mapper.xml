@@ -32,6 +32,18 @@
             <b>type</b>
         </field>
         <field>
+            <a>description</a>
+            <b>description</b>
+        </field>
+        <field>
+            <a>createDate</a>
+            <b>createDate</b>
+        </field>
+        <field>
+            <a>updateDate</a>
+            <b>updateDate</b>
+        </field>
+        <field>
             <a>fields</a>
             <b>fields</b>
         </field>

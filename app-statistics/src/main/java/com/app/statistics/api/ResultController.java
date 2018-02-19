@@ -14,6 +14,7 @@ import static com.app.statistics.precondition.Precondition.checkNotNull;
 
 @RestController
 @RequestMapping("api/result")
+@CrossOrigin(origins = "http://localhost:8000")
 public class ResultController {
     private static final String APPLICATION_JSON = "application/json";
 
