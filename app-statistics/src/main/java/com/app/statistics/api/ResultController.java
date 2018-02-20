@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
+
 import static com.app.statistics.precondition.Precondition.checkNotNull;
 
 @RestController
@@ -40,6 +42,15 @@ public class ResultController {
         checkNotNull(body.getType(), new IncorrectResultTypeAdviceException());
 
         resultTypeService.save(body);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "type", method = RequestMethod.PUT, produces = APPLICATION_JSON)
+    public ResponseEntity updateResultType(@RequestBody ResultTypeModel body){
+        checkNotNull(body, new IncorrectResultTypeBodyAdviceException());
+        checkNotNull(body.getType(), new IncorrectResultTypeAdviceException());
+
+        resultTypeService.update(body);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

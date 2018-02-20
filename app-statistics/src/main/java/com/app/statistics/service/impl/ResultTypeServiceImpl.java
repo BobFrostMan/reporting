@@ -1,7 +1,9 @@
 package com.app.statistics.service.impl;
 
 import com.app.statistics.entity.ResultTypeEntity;
+import com.app.statistics.exception.advice.RequestMatcherAdviceException;
 import com.app.statistics.exception.advice.ResourceAlreadyExistsAdviceException;
+import com.app.statistics.exception.advice.ResourceNotFoundAdviceException;
 import com.app.statistics.mapper.BeanMapper;
 import com.app.statistics.model.ResultTypeModel;
 import com.app.statistics.repository.ResultTypeRepository;
@@ -13,6 +15,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import static com.app.statistics.precondition.Precondition.checkIsFalse;
+import static com.app.statistics.precondition.Precondition.checkIsTrue;
+import static com.app.statistics.precondition.Precondition.checkNotNull;
+
 @Service
 public class ResultTypeServiceImpl implements ResultTypeService {
 
@@ -23,14 +29,30 @@ public class ResultTypeServiceImpl implements ResultTypeService {
     private BeanMapper mapper;
 
     @Override
-    public void save(final ResultTypeModel typeDescriptionModel) {
-        final ResultTypeEntity result = mapper.map(typeDescriptionModel, ResultTypeEntity.class);
-        if (existsByType(typeDescriptionModel.getType())) {
-            throw new ResourceAlreadyExistsAdviceException();
-        }
+    public void save(final ResultTypeModel resultTypeModel) {
+        checkIsFalse(existsByType(resultTypeModel.getType()), new ResourceAlreadyExistsAdviceException());
+
+        final ResultTypeEntity result = mapper.map(resultTypeModel, ResultTypeEntity.class);
+        checkNotNull(result, new RequestMatcherAdviceException());
 
         result.setCreateDate(new Date());
         repository.save(result);
+    }
+
+    @Override
+    public void update(final ResultTypeModel resultTypeModel) {
+        checkIsTrue(existsByType(resultTypeModel.getType()), new ResourceNotFoundAdviceException());
+
+        ResultTypeEntity newResult = mapper.map(resultTypeModel, ResultTypeEntity.class);
+        checkNotNull(newResult, new RequestMatcherAdviceException());
+
+        final ResultTypeEntity resultFromDB = repository.findByType(newResult.getType());
+        checkNotNull((resultFromDB), new ResourceNotFoundAdviceException());
+
+        newResult.setId(resultFromDB.getId());
+        newResult.setCreateDate(resultFromDB.getCreateDate());
+        newResult.setUpdateDate(new Date());
+        repository.save(newResult);
     }
 
     @Override

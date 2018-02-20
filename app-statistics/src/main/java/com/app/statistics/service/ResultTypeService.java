@@ -8,6 +8,8 @@ public interface ResultTypeService {
 
     void save(ResultTypeModel typeDescription);
 
+    void update(ResultTypeModel resultTypeModel);
+
     List<ResultTypeModel> findAll();
 
     ResultTypeModel findByType(String type);
