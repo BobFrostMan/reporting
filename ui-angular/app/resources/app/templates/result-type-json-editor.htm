@@ -1,0 +1,16 @@
+<div class="json-editor">
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="result-type-json">Result type Json:</label>
+                <textarea class="form-control" rows="15" id="result-type-json" placeholder="{{$ctrl.jsonResultTypeExample}}" ng-model="$ctrl.resultType"></textarea>
+            </div>
+            <button type="button" class="btn btn-secondary float-right mr-3" ng-click="$ctrl.saveResultType()">
+                Save <i class="ion-checkmark-round"></i>
+            </button>
+            <button type="button" class="btn btn-secondary float-right mr-3" ng-click="$ctrl.formatJson()">
+                Format
+            </button>
+        </div>
+    </div>
+</div>

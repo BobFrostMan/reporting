@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <link href="resources/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="resources/vendor/bootstrap/dist/css/bootstrap-grid.min.css" rel="stylesheet">
+    <link href="resources/vendor/bootstrap/dist/css/bootstrap-reboot.min.css" rel="stylesheet">
+    <link href="resources/vendor/toastr/toastr.min.css" rel="stylesheet">
+    <link href="resources/vendor/Ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="resources/app/css/ng-cloak.css" rel="stylesheet">
+    <link href="resources/app/css/main.css" rel="stylesheet">
+    
+</head>
+
+<body>
+        <header-directive></header-directive>
+        <div class="container-fluid">
+            <div ng-view></div>
+        </div>
+        <footer-directive></footer-directive>
+
+    <script src="resources/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="resources/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="resources/vendor/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="resources/vendor/toastr/toastr.min.js"></script>
+    
+    <script src="resources/vendor/angular/angular.min.js"></script>
+    <script src="resources/vendor/angular-route/angular-route.min.js"></script>
+    <script src="resources/vendor/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="resources/app/app.js"></script>
+    <!--COMMON-->
+    <script src="resources/app/common/common.module.js"></script>
+    <!--COMMON.SERVICE-->
+    <script src="resources/app/common/services/common-services.module.js"></script>
+    <script src="resources/app/common/services/header.service.js"></script>
+    <script src="resources/app/common/services/result-type.service.js"></script>
+    <script src="resources/app/common/services/util.service.js"></script>
+    <!--COMMON.FILTER-->
+    <script src="resources/app/common/filters/common-filters.module.js"></script>
+    <!--COMMON.DIRECTIVE-->
+    <script src="resources/app/common/directive/common-directive.module.js"></script>
+    <script src="resources/app/common/directive/site.directive.js"></script>
+    <!--COMMON.ROUTE-->
+    <script src="resources/app/common/route/common-route.module.js"></script>
+    <script src="resources/app/common/route/site.route.js"></script>
+    <!--COMMON.CONSTANT-->
+    <script src="resources/app/common/constant/common-constant.module.js"></script>
+    <!--COMMON.DECORATOR-->
+    <script src="resources/app/common/decorator/common-decorator.module.js"></script>
+    <script src="resources/app/common/decorator/log.decorator.js"></script>
+    <!--FEATURE-->
+    <script src="resources/app/feature/common.feature.js"></script>
+    <!--FEATURE.CONTROLLER-->
+    <script src="resources/app/feature/header.controller.js"></script>
+    <script src="resources/app/feature/result-type-list.controller.js"></script>
+    <script src="resources/app/feature/create-result-type.controller.js"></script>
+    <script src="resources/app/feature/edit-result-type.controller.js"></script>
+</body>
+
+</html>

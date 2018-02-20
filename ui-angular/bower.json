@@ -1,0 +1,26 @@
+{
+  "name": "todo-app",
+  "version": "0.0.1",
+  "description": "app-statistics",
+  "authors": [
+    "MonoM"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/js/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.6.7",
+    "angular-route": "~1.6.7",
+	"angular-sanitize": "~1.6.9",
+    "bootstrap": "~4.0.0",
+	"jquery": "~3.3.1",
+	"ionicons": "~2.0.1",
+	"toastr": "~1.3.1"
+  }
+}

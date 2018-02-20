@@ -1,0 +1,62 @@
+<div class="result-type-list" ng-controller="ResultTypeList as $ctrl">
+    <div class="row">
+        <div class="col-12">
+
+            <div class="card w-100 top-btn-buffer-10">
+                <div class="card-body">
+                    <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text" id="btnGroup1">
+                                    <i class="icon ion-search"></i>
+                                </div>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Search type" aria-label="Input search type" aria-describedby="btnGroup1" ng-model="$ctrl.search.type">
+                        </div>
+                        <div class="btn-group" role="group" aria-label="First group">
+                            <a href="#!/result-type/create" class="btn btn-secondary mr-1" role="button" aria-pressed="true">
+                                <i class="icon ion-plus-round"></i>
+                            </a>
+                            <button type="button" class="btn btn-secondary">
+                                <i class="icon ion-refresh" ng-click="$ctrl.reloadTypes()"></i>
+                            </button>
+ 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Created</th>
+                        <th scope="col">Updated</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in $ctrl.resultTypes | filter: $ctrl.search">
+                        <th scope="row">{{$index + 1}}</th>
+                        <td>{{item.type}}</td>
+                        <td>{{item.description}}</td>
+                        <td>{{item.createDate | date:"dd.MM.yyyy 'at' h:mma"}}</td>
+                        <td>{{item.updateDate | date:"dd.MM.yyyy 'at' h:mma"}}</td>
+                        <td> 
+                            <div class="btn-group" role="group" aria-label="type">
+                                <a href="#!/result-type/edit?name={{item.type}}" class="btn btn-secondary" role="button" aria-pressed="true">
+                                     <i class="icon ion-edit"></i>
+                                </a>
+                                <button type="button" class="btn btn-secondary" ng-click="$ctrl.deleteByType(item.type)">
+                                    <i class="icon ion-minus-round"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

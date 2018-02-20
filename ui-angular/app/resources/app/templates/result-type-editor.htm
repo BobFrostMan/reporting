@@ -1,0 +1,35 @@
+<div class="result-type-editor">
+    <div class="row">
+        <div class="col-12">
+
+            <div class="card w-100 top-btn-buffer-10">
+                <div class="card-body">
+                    <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-secondary active" ng-click="$ctrl.updateEditorType('json-editor')">
+                                <input type="radio" name="options" id="option1" checked> Json Editor
+                            </label>
+                            <label class="btn btn-secondary" ng-click="$ctrl.updateEditorType('ui-editor')">
+                                <input type="radio" name="options" id="option2"> UI Editor
+                            </label>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="First group">
+                            <a href="#!result-type" class="btn btn-secondary mr-1" role="button" aria-pressed="true">
+                        <i class="icon ion-close-round"></i>
+                    </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="editor">
+                <div ng-if="$ctrl.editorType == 'json-editor'">
+                    <result-type-json-editor-directive></result-type-json-editor-directive>
+                </div>
+                <div ng-if="$ctrl.editorType == 'ui-editor'">
+                    <result-type-ui-editor-directive></result-type-ui-editor-directive>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
