@@ -13,7 +13,9 @@ public enum Functionality {
     INCORRECT_RESULT_TYPE_BODY(6, HttpStatus.BAD_REQUEST, "Incorrect result type body."),
     RESOURCE_ALREADY_EXISTS(7, HttpStatus.CONFLICT, "Resource already exists."),
     RESOURCE_NOT_FOUND(8, HttpStatus.NOT_FOUND, "Resource not found."),
-    INCORRECT_REQUEST_PARAMETERS(9, HttpStatus.BAD_REQUEST, "Incorrect request parameters.");
+    INCORRECT_REQUEST_PARAMETERS(9, HttpStatus.BAD_REQUEST, "Incorrect request parameters."),
+    INCORRECT_DASHBOARD_BODY(10, HttpStatus.BAD_REQUEST, "Incorrect dashboard body."),
+    INCORRECT_DASHBOARD_NAME(11, HttpStatus.BAD_REQUEST, "Incorrect dashboard name.");
 
     private static final String ERROR = "ERROR: ";
     private HttpStatus httpStatus;

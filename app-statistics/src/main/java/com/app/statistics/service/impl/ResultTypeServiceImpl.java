@@ -58,8 +58,8 @@ public class ResultTypeServiceImpl implements ResultTypeService {
     @Override
     public List<ResultTypeModel> findAll() {
         final List<ResultTypeModel> result = new ArrayList<>();
-        final List<ResultTypeEntity> typeDescriptionEntities = repository.findAll();
-        typeDescriptionEntities.forEach(entity -> result.add(mapper.map(entity, ResultTypeModel.class)));
+        final List<ResultTypeEntity> resultTypeEntities = repository.findAll();
+        resultTypeEntities.forEach(entity -> result.add(mapper.map(entity, ResultTypeModel.class)));
 
         return result;
     }

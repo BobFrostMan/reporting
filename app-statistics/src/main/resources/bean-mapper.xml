@@ -69,4 +69,29 @@
             <b>childrenFields</b>
         </field>
     </mapping>
+
+    <mapping map-id="dashboard">
+        <class-a>com.app.statistics.entity.DashboardEntity</class-a>
+        <class-b>com.app.statistics.model.DashboardModel</class-b>
+        <field>
+            <a>id</a>
+            <b>id</b>
+        </field>
+        <field>
+            <a>name</a>
+            <b>name</b>
+        </field>
+        <field>
+            <a>description</a>
+            <b>description</b>
+        </field>
+        <field>
+            <a>createDate</a>
+            <b>createDate</b>
+        </field>
+        <field>
+            <a>updateDate</a>
+            <b>updateDate</b>
+        </field>
+    </mapping>
 </mappings>
