@@ -1,0 +1,39 @@
+<div class="dashboard-list" ng-controller="DashboardShow as $ctrl">
+    <div class="row">
+        <div class="col-12">
+
+            <div class="card w-100 top-btn-buffer-10">
+                <div class="card-body">
+                    <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+                        <div class="datepicker-group">
+                            <md-datepicker ng-model="$ctrl.dateFrom" md-placeholder="Enter date from"></md-datepicker>
+                            <md-datepicker ng-model="$ctrl.dateTo" md-placeholder="Enter date to"></md-datepicker>
+                        </div>
+
+
+                        <div class="btn-group" role="group" aria-label="First group">
+                            <a href="#!dashboard" class="btn btn-secondary mr-1" role="button" aria-pressed="true">
+                                <i class="icon ion-close-round"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard card">
+                <div class="card-header">
+                    Dashboard: {{$ctrl.name}}
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <value-diagram-report-directive></value-diagram-report-directive>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!--https://jtblin.github.io/angular-chart.js/#getting_started-->

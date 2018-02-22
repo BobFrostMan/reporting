@@ -13,7 +13,6 @@
         $ctrl.reloadTypes = reloadTypes;
         
         function _postConstract() {
-            debugger;
             loadResultType();
         }
         

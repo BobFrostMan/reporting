@@ -1,5 +1,6 @@
 package com.app.statistics.api;
 
+import com.app.statistics.exception.advice.IncorrectRequestParameterAdviceException;
 import com.app.statistics.exception.advice.IncorrectResultBodyAdviceException;
 import com.app.statistics.exception.advice.IncorrectResultDataAdviceException;
 import com.app.statistics.exception.advice.IncorrectResultMetaAdviceException;
@@ -31,4 +32,10 @@ public class ResultController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/{type}", method = RequestMethod.GET, produces = APPLICATION_JSON)
+    public ResponseEntity findAllByType(@PathVariable String type){
+        checkNotNull(type, new IncorrectRequestParameterAdviceException());
+
+        return new ResponseEntity<>(resultService.findAllByType(type), HttpStatus.OK);
+    }
 }

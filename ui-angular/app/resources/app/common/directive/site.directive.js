@@ -6,7 +6,8 @@
         .directive("footerDirective", footerDirective)
         .directive("resultTypeEditorDirective", resultTypeEditorDirective)
         .directive("resultTypeJsonEditorDirective", resultTypeJsonEditorDirective)
-        .directive("resultTypeUiEditorDirective", resultTypeUiEditorDirective);
+        .directive("resultTypeUiEditorDirective", resultTypeUiEditorDirective)
+        .directive("valueDiagramReportDirective", valueDiagramReportDirective);
 })();
 
 function headerDirective(){
@@ -41,5 +42,12 @@ function resultTypeUiEditorDirective(){
     return {
         restrict: "EA"
         , templateUrl: "resources/app/templates/result-type-ui-editor.htm"
+    }
+}
+
+function valueDiagramReportDirective(){
+    return {
+        restrict: "EA"
+        , templateUrl: "resources/app/templates/reports/value-diagram-report.htm"
     }
 }

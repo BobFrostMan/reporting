@@ -9,6 +9,8 @@ import com.app.statistics.service.ResultService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 import static com.app.statistics.precondition.Precondition.checkNotNull;
 
 @Service
@@ -25,5 +27,10 @@ public class ResultServiceImpl implements ResultService {
         checkNotNull(entity, new RequestMatcherAdviceException());
 
         resultRepository.save(entity);
+    }
+
+    @Override
+    public List<ResultEntity> findAllByType(final String type) {
+        return resultRepository.findAllByType(type);
     }
 }
