@@ -1,3 +1,7 @@
+body {
+    background-color: #e9ecef;
+}
+
 .top-btn-buffer-10 {
     margin-top:10px;
     margin-bottom:10px;
@@ -6,4 +10,8 @@
 .datepicker-group .md-button.md-icon-button {
     height: 0px;
     padding: 0px;
+}
+
+.alpha {
+    background-color: red;
 }

@@ -11,7 +11,7 @@
         $ctrl.name = "";
         $ctrl.description = "";
         $ctrl.report;
-
+        
         $ctrl.dateFrom = new Date();
         $ctrl.dateTo = new Date();
 
@@ -25,13 +25,14 @@
 
                 dashboardManagerService.getDashboardConfig(dashboard, function (report) {
                     $ctrl.report = report;
-                    debugger;
+
                 });
             }
 
             function onError(error) {}
 
             dashboardService.load(dashboardName, onSucces, onError);
+          
         }
 
         _postConstract();
